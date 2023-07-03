@@ -3,12 +3,18 @@ import classes from "./AddUser.module.css";
 import Button from "../Button/Button";
 
 function AddUser() {
+  const inputChangeHandler = (event) => {
+    console.log(event.target.value);
+  };
+  const submitHandler = (event) => {
+    event.preventDefault();
+  };
   return (
-    <form className={classes.input}>
+    <form className={classes.input} onSubmit={submitHandler}>
       <p>User name</p>
-      <input></input>
+      <input onChange={inputChangeHandler} type="text"></input>
       <p>Age(Years)</p>
-      <input></input>
+      <input onChange={inputChangeHandler} type="number"></input>
       <Button />
     </form>
   );

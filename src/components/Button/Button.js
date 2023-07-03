@@ -2,11 +2,8 @@ import React from "react";
 import classes from "./Button.module.css";
 
 function Button() {
-  const clickHandler = (event) => {
-    event.preventDefault();
-  };
   return (
-    <button className={classes.button} type="submit" onClick={clickHandler}>
+    <button className={classes.button} type="submit">
       Add User
     </button>
   );
