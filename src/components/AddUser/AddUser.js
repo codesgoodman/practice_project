@@ -17,10 +17,10 @@ function AddUser(props) {
   };
   return (
     <form className={classes.input} onSubmit={submitHandler}>
-      <p>User name</p>
-      <input onChange={inputChangeHandler1} type="text"></input>
-      <p>Age(Years)</p>
-      <input onChange={inputChangeHandler2} type="number"></input>
+      <label htmlFor="username">User name</label>
+      <input id="username" onChange={inputChangeHandler1} type="text"></input>
+      <label htmlFor="age">Age(Years)</label>
+      <input id="age" onChange={inputChangeHandler2} type="number"></input>
       <Button />
     </form>
   );
