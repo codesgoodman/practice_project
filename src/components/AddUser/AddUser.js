@@ -23,7 +23,7 @@ function AddUser(props) {
         <input id="username" onChange={inputChangeHandler1} type="text"></input>
         <label htmlFor="age">Age(Years)</label>
         <input id="age" onChange={inputChangeHandler2} type="number"></input>
-        <Button />
+        <Button type="submit">Add user</Button>
       </form>
     </Card>
   );
