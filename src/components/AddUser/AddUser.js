@@ -14,15 +14,31 @@ function AddUser(props) {
   };
   const submitHandler = (event) => {
     event.preventDefault();
+    if (inputValue1.trim().length === 0 || inputValue2.trim().length === 0) {
+      return;
+    }
+    if (+inputValue2 < 1) return;
     props.onAddUser([inputValue1, inputValue2]);
+    setInputValue1("");
+    setInputValue2("");
   };
   return (
     <Card className={classes.input}>
       <form onSubmit={submitHandler}>
         <label htmlFor="username">User name</label>
-        <input id="username" onChange={inputChangeHandler1} type="text"></input>
+        <input
+          value={inputValue1}
+          id="username"
+          onChange={inputChangeHandler1}
+          type="text"
+        ></input>
         <label htmlFor="age">Age(Years)</label>
-        <input id="age" onChange={inputChangeHandler2} type="number"></input>
+        <input
+          value={inputValue2}
+          id="age"
+          onChange={inputChangeHandler2}
+          type="number"
+        ></input>
         <Button type="submit">Add user</Button>
       </form>
     </Card>
