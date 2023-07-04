@@ -4,12 +4,14 @@ import UsersList from "./components/UsersList/UsersList";
 import "./index.css";
 
 function App() {
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState([]);
   const addUserHandler = (uName, uAge) => {
     setUserInput((prevUsersList) => {
-      return [...prevUsersList, { name: uName, age: uAge }];
+      return [
+        ...prevUsersList,
+        { name: uName, age: uAge, id: Math.random().toString() },
+      ];
     });
-    console.log(userInput);
   };
   return (
     <div>

@@ -7,11 +7,11 @@ function UsersList(props) {
     <Card className={classes.users}>
       <div>
         <ul>
-          {/* {props.users.map((user) => (
-            <li>
+          {props.users.map((user) => (
+            <li key={props.id}>
               {user.name}({user.age} years old)
             </li>
-          ))} */}
+          ))}
         </ul>
       </div>
     </Card>
