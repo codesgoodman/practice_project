@@ -17,8 +17,10 @@ function AddUser(props) {
     if (inputValue1.trim().length === 0 || inputValue2.trim().length === 0) {
       return;
     }
-    if (+inputValue2 < 1) return;
-    props.onAddUser([inputValue1, inputValue2]);
+    if (+inputValue2 < 1) {
+      return;
+    }
+    props.onAddUser(inputValue1, inputValue2);
     setInputValue1("");
     setInputValue2("");
   };
