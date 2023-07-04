@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./AddUser.module.css";
 import Button from "../Button/Button";
 import Card from "../Card/Card";
+import ErrorModal from "../ErrorModal/ErrorModal";
 
 function AddUser(props) {
   const [inputValue1, setInputValue1] = useState("");
@@ -25,25 +26,28 @@ function AddUser(props) {
     setInputValue2("");
   };
   return (
-    <Card className={classes.input}>
-      <form onSubmit={submitHandler}>
-        <label htmlFor="username">User name</label>
-        <input
-          value={inputValue1}
-          id="username"
-          onChange={inputChangeHandler1}
-          type="text"
-        ></input>
-        <label htmlFor="age">Age(Years)</label>
-        <input
-          value={inputValue2}
-          id="age"
-          onChange={inputChangeHandler2}
-          type="number"
-        ></input>
-        <Button type="submit">Add user</Button>
-      </form>
-    </Card>
+    <div>
+      <ErrorModal title="" message="" />
+      <Card className={classes.input}>
+        <form onSubmit={submitHandler}>
+          <label htmlFor="username">User name</label>
+          <input
+            value={inputValue1}
+            id="username"
+            onChange={inputChangeHandler1}
+            type="text"
+          ></input>
+          <label htmlFor="age">Age(Years)</label>
+          <input
+            value={inputValue2}
+            id="age"
+            onChange={inputChangeHandler2}
+            type="number"
+          ></input>
+          <Button type="submit">Add user</Button>
+        </form>
+      </Card>
+    </div>
   );
 }
 
